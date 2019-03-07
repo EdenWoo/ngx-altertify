@@ -27,9 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/alertifyjs/build/css/alertify.min.css",
+              "node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
+//              "node_modules/alertifyjs/build/css/themes/default.min.css",
+              "node_modules/alertifyjs/build/css/themes/semantic.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/alertifyjs/build/alertify.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,6 +133,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-alertify": {
+      "root": "projects/ngx-alertify",
+      "sourceRoot": "projects/ngx-alertify/src",
+      "projectType": "library",
+      "prefix": "ngal",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-alertify/tsconfig.lib.json",
+            "project": "projects/ngx-alertify/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-alertify/src/test.ts",
+            "tsConfig": "projects/ngx-alertify/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-alertify/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-alertify/tsconfig.lib.json",
+              "projects/ngx-alertify/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

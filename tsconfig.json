@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-alertify": [
+        "dist/ngx-alertify"
+      ],
+      "ngx-alertify/*": [
+        "dist/ngx-alertify/*"
+      ]
+    }
   }
 }
