@@ -1,27 +1,48 @@
-# NgxAlertifyApp
+# About this lib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+This lib support Angular6+ only
+ng-app-state is built on top of a wrapper of alertify.js.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+1. npm install ngx-alertify
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. npm install alertifyjs
 
-## Build
+3. add the following style and js to angular.json file:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+{
+  ...
+  "projects": {
+    ...
+      "architect": {
+        "build": {
+          ...
+            "styles": [
+              ...
+              "node_modules/alertifyjs/build/css/alertify.min.css",
+              "node_modules/alertifyjs/build/css/themes/bootstrap.min.css",
+              "node_modules/alertifyjs/build/css/themes/semantic.min.css"
+            ],
+            "scripts": [
+              "node_modules/alertifyjs/build/alertify.min.js"
+            ]
+          },
+          ...
+        }
+      }
+    }
+  }
+}
 
-## Running unit tests
+4.Inject service to you component where needed
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+export class AppComponent {
+  constructor(private alertifyService: NgxAlertifyService) {
+    alertifyService.success('sucess');
+  }
+}
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+5. Call the method by 
+   alertifyService.success('sucess');
