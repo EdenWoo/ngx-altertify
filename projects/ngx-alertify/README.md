@@ -7,12 +7,13 @@ it is a wrapper of alertify.js.
 
 ## Install
 
-1. npm install ngx-alertify
+1. ```npm install ngx-alertify```
 
-2. npm install alertifyjs
+2. ```npm install alertifyjs```
 
 3. add the following style and js to angular.json file:
 
+```
 {
   ...
   "projects": {
@@ -36,14 +37,19 @@ it is a wrapper of alertify.js.
     }
   }
 }
+```
 
 4.Inject service to you component where needed
 
+```
 export class AppComponent {
   constructor(private alertifyService: NgxAlertifyService) {
     alertifyService.success('sucess');
   }
 }
+```
 
 5. Call the method by 
+```
    alertifyService.success('sucess');
+   ```
