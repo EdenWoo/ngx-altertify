@@ -2,7 +2,7 @@
 
 This lib support Angular6+ only
 
-it is built on top of a wrapper of alertify.js.
+it is a wrapper of alertify.js.
 
 
 ## Install
