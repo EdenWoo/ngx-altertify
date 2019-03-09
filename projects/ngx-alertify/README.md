@@ -1,7 +1,8 @@
 # About this lib
 
 This lib support Angular6+ only
-ng-app-state is built on top of a wrapper of alertify.js.
+
+it is built on top of a wrapper of alertify.js.
 
 
 ## Install

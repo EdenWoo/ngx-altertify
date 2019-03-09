@@ -9,7 +9,6 @@ import {NgxAlertifyService} from '../../projects/ngx-alertify/src/lib/ngx-alerti
 export class AppComponent {
   constructor(private alertifyService: NgxAlertifyService) {
     alertifyService.success('sucess');
-    alertifyService.errorAlert();
   }
 
   title = 'ngx-alertify-app';
