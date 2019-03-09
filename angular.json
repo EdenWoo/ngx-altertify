@@ -151,6 +151,11 @@
           "options": {
             "tsConfig": "projects/ngx-alertify/tsconfig.lib.json",
             "project": "projects/ngx-alertify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-alertify/ng-package.prod.json"
+            }
           }
         },
         "test": {
