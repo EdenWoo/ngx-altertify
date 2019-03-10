@@ -34,13 +34,17 @@ export class NgxAlertifyService {
     alertify.message(message);
   }
 
-  youtubeDialog(youtubeVideoId: string, frameless?: boolean) {
+  youtubeDialog(youtubeVideoId: string, frameless?: boolean, title?: string) {
     let _youtubeVideoId = '';
     if (!youtubeVideoId) {
       _youtubeVideoId = 'GODhPuM5cEE';
     } else {
       _youtubeVideoId = youtubeVideoId;
     }
+
+    // set title
+    const _title = title ? title : '';
+
     alertify.YoutubeDialog || alertify.dialog('YoutubeDialog', function () {
       let iframe;
       return {
@@ -114,7 +118,9 @@ export class NgxAlertifyService {
     });
 
     // show the dialog
-    alertify.YoutubeDialog(_youtubeVideoId).set({frameless: frameless});
+    alertify
+      .YoutubeDialog(_youtubeVideoId)
+      .set({frameless: frameless, title: _title});
   }
 
 //   errorAlert() {

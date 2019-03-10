@@ -29,7 +29,7 @@ export class AppComponent {
   }
 
   youtubeDialog() {
-    this.alertifyService.youtubeDialog('pVbcAafEzDc', true);
+    this.alertifyService.youtubeDialog('pVbcAafEzDc', false, 'title');
   }
 
   alert() {
