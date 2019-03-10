@@ -34,7 +34,13 @@ export class NgxAlertifyService {
     alertify.message(message);
   }
 
-  youtubeDialog() {
+  youtubeDialog(youtubeVideoId: string, frameless?: boolean) {
+    let _youtubeVideoId = '';
+    if (!youtubeVideoId) {
+      _youtubeVideoId = 'GODhPuM5cEE';
+    } else {
+      _youtubeVideoId = youtubeVideoId;
+    }
     alertify.YoutubeDialog || alertify.dialog('YoutubeDialog', function () {
       let iframe;
       return {
@@ -60,6 +66,7 @@ export class NgxAlertifyService {
         build: function () {
           // create the iframe element
           iframe = document.createElement('iframe');
+          iframe.title = 'title';
           iframe.frameBorder = 'no';
           iframe.width = '100%';
           iframe.height = '100%';
@@ -105,8 +112,9 @@ export class NgxAlertifyService {
         }
       };
     });
+
     // show the dialog
-    alertify.YoutubeDialog('GODhPuM5cEE').set({frameless: false});
+    alertify.YoutubeDialog(_youtubeVideoId).set({frameless: frameless});
   }
 
 //   errorAlert() {
